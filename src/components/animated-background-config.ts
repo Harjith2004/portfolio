@@ -35,7 +35,7 @@ export const STATES = {
   },
   skills: {
     desktop: {
-      scale: { x: 0.45, y: 0.45, z: 0.45 },
+      scale: { x: 0.3, y: 0.3, z: 0.3 },
       position: { x: 0, y: 0, z: 0 },
       rotation: {
         x: 0,
