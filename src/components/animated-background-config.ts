@@ -35,7 +35,7 @@ export const STATES = {
   },
   skills: {
     desktop: {
-      scale: { x: 0.6, y: 0.6, z: 0.6 },
+      scale: { x: 0.45, y: 0.45, z: 0.45 },
       position: { x: 0, y: 0, z: 0 },
       rotation: {
         x: 0,
@@ -103,7 +103,7 @@ export const getKeyboardState = ({
   isMobile: boolean;
 }) => {
   const baseTransform = STATES[section][isMobile ? "mobile" : "desktop"];
-  const scaleOffset = +(window.devicePixelRatio - 0.4).toFixed(1)
+  const scaleOffset = +(window.devicePixelRatio - 0.4).toFixed(1);
 
   return {
     ...baseTransform,
