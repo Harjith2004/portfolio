@@ -25,7 +25,7 @@ const HeroSection = () => {
             "h-[calc(100dvh-3rem)] md:h-[calc(100dvh-4rem)] z-[2]",
             "col-span-1",
             "flex flex-col justify-start md:justify-center items-center md:items-start",
-            "pt-28 sm:pt-0 sm:pb-16 md:p-20 lg:p-24 xl:p-28"
+            "pt-28 sm:pt-0 sm:pb-16 md:p-20 lg:p-24 xl:p-28",
           )}
         >
           {!isLoading && (
@@ -35,7 +35,7 @@ const HeroSection = () => {
                   <p
                     className={cn(
                       "md:self-start mt-4 font-thin text-md text-slate-500 dark:text-zinc-400 ml-3",
-                      "cursor-default font-display sm:text-xl md:text-xl whitespace-nowrap bg-clip-text "
+                      "cursor-default font-display sm:text-xl md:text-xl whitespace-nowrap bg-clip-text ",
                     )}
                   >
                     Hi, I am
@@ -48,7 +48,7 @@ const HeroSection = () => {
                       <h1
                         className={cn(
                           "font-thin text-6xl text-transparent text-slate-800 ml-1 text-left",
-                          "cursor-default text-edge-outline font-display sm:text-7xl md:text-9xl "
+                          "cursor-default text-edge-outline font-display sm:text-7xl md:text-9xl ",
                         )}
                       >
                         {config.author.split(" ")[0]}
@@ -73,7 +73,7 @@ const HeroSection = () => {
                   <p
                     className={cn(
                       "md:self-start md:mt-4 font-thin text-md text-slate-500 dark:text-zinc-400 ml-3",
-                      "cursor-default font-display sm:text-xl md:text-xl whitespace-nowrap bg-clip-text "
+                      "cursor-default font-display sm:text-xl md:text-xl whitespace-nowrap bg-clip-text ",
                     )}
                   >
                     An Aspiring Software Developer
@@ -83,12 +83,12 @@ const HeroSection = () => {
               <div className="mt-8 md:ml-2 flex flex-col gap-3">
                 <Link
                   href={
-                    "https://drive.google.com/file/d/YOUR_RESUME_FILE_ID/view"
+                    "https://drive.google.com/file/d/14zbI10_Xn0vIonP2vNuQrEDkxxIGbb89/view?usp=drivesdk"
                   }
                   target="_blank"
                   className="flex-1"
                 >
-                  <BoxReveal delay={2} width="100%" >
+                  <BoxReveal delay={2} width="100%">
                     <Button className="flex items-center gap-2 w-full">
                       <File size={24} />
                       <p>Resume</p>
@@ -111,18 +111,12 @@ const HeroSection = () => {
                       <p>pls 🥹 🙏</p>
                     </TooltipContent>
                   </Tooltip>
-                  <Link
-                    href={config.social.github}
-                    target="_blank"
-                  >
+                  <Link href={config.social.github} target="_blank">
                     <Button variant={"outline"}>
                       <SiGithub size={24} />
                     </Button>
                   </Link>
-                  <Link
-                    href={config.social.linkedin}
-                    target="_blank"
-                  >
+                  <Link href={config.social.linkedin} target="_blank">
                     <Button variant={"outline"}>
                       <SiLinkedin size={24} />
                     </Button>
