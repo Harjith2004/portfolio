@@ -15,7 +15,7 @@ export const STATES = {
   },
   about: {
     desktop: {
-      scale: { x: 0.4, y: 0.4, z: 0.4 },
+      scale: { x: 0.3, y: 0.3, z: 0.3 },
       position: { x: 0, y: -40, z: 0 },
       rotation: {
         x: 0,
@@ -44,7 +44,7 @@ export const STATES = {
       },
     },
     mobile: {
-      scale: { x: 0.35, y: 0.35, z: 0.35 },
+      scale: { x: 0.18, y: 0.18, z: 0.18 },
       position: { x: 0, y: 0, z: 0 },
       rotation: {
         x: 0,
@@ -55,7 +55,7 @@ export const STATES = {
   },
   projects: {
     desktop: {
-      scale: { x: 0.3, y: 0.3, z: 0.3 },
+      scale: { x: 0.2, y: 0.2, z: 0.2 },
       position: { x: 0, y: -40, z: 0 },
       rotation: {
         x: Math.PI,
@@ -75,7 +75,7 @@ export const STATES = {
   },
   contact: {
     desktop: {
-      scale: { x: 0.3, y: 0.3, z: 0.3 },
+      scale: { x: 0.2, y: 0.2, z: 0.2 },
       position: { x: 500, y: -250, z: 0 },
       rotation: {
         x: 0,

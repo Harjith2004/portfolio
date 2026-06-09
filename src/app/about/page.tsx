@@ -12,9 +12,7 @@ import {
   FaPhone,
   FaReact,
 } from "react-icons/fa6";
-import {
-  RiJavascriptFill,
-} from "react-icons/ri";
+import { RiJavascriptFill } from "react-icons/ri";
 import {
   SiExpress,
   SiPostman,
@@ -209,19 +207,21 @@ function Page() {
             style={{ backdropFilter: "blur(2px)" }}
           >
             <h1 className="text-3xl mb-10 lg:md-20">About me</h1>
-            <p className="mb-10 text-roboto">
+            <p className="mb-10 text-white font-medium">
               Hey there! I&apos;m Harjith K, an aspiring Software Developer with
-              a strong foundation in Java, Spring Boot, React.js, JavaScript, and SQL.
-              I&apos;m passionate about building scalable web applications, REST APIs,
-              and secure software solutions. My journey has been shaped by hands-on
-              academic projects and a Software Developer Internship at HOP Technologies,
-              where I developed real-world applications using modern tech stacks.
+              a strong foundation in Java, Spring Boot, React.js, JavaScript,
+              and SQL. I&apos;m passionate about building scalable web
+              applications, REST APIs, and secure software solutions. My journey
+              has been shaped by hands-on academic projects and a Software
+              Developer Internship at HOP Technologies, where I developed
+              real-world applications using modern tech stacks.
             </p>
-            <p className="mb-10">
-              I&apos;m a Hackathon Winner (1st Place at Nan Mudhalvan Hackathon) and
-              love solving complex problems through clean, efficient code. When I&apos;m not
-              coding, you&apos;ll find me exploring emerging technologies, earning certifications,
-              and pushing the boundaries of what software can do.
+            <p className="mb-10 text-white font-medium">
+              I&apos;m a Hackathon Winner (1st Place at Nan Mudhalvan Hackathon)
+              and love solving complex problems through clean, efficient code.
+              When I&apos;m not coding, you&apos;ll find me exploring emerging
+              technologies, earning certifications, and pushing the boundaries
+              of what software can do.
             </p>
             <h1 className="text-3xl mb-10 lg:md-20">Stuff I use</h1>
             <div className="mb-5">
