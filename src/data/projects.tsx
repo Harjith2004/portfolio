@@ -145,8 +145,12 @@ const projects: Project[] = [
     id: "voice-auth",
     category: "Security / Healthcare",
     title: "Voice-Based Authentication System",
-    src: `${BASE_PATH}/voice-auth/landing.png`,
-    screenshots: [`${BASE_PATH}/voice-auth/landing.png`],
+    src: `${BASE_PATH}/voice-auth/loginpage.png`,
+screenshots: [
+  `${BASE_PATH}/voice-auth/loginpage.png`,
+  `${BASE_PATH}/voice-auth/patientmanagement.png`,
+  `${BASE_PATH}/voice-auth/patientdetails.png`,
+],
     skills: {
       frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.tailwind, PROJECT_SKILLS.js],
       backend: [PROJECT_SKILLS.node, PROJECT_SKILLS.express, PROJECT_SKILLS.mongo],
@@ -182,8 +186,13 @@ const projects: Project[] = [
     id: "urban-complaint",
     category: "AI / NLP System",
     title: "Automated Urban Complaint Classification",
-    src: `${BASE_PATH}/urban-complaint/landing.png`,
-    screenshots: [`${BASE_PATH}/urban-complaint/landing.png`],
+    src: `${BASE_PATH}/urban-complaint/submit.png`,
+screenshots: [
+  `${BASE_PATH}/urban-complaint/submit.png`,
+  `${BASE_PATH}/urban-complaint/dashboard.png`,
+  `${BASE_PATH}/urban-complaint/log.png`,
+  `${BASE_PATH}/urban-complaint/setting.png`,
+],
     skills: {
       frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.tailwind],
       backend: [PROJECT_SKILLS.fastapi, PROJECT_SKILLS.postgres],
