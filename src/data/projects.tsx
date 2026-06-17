@@ -145,35 +145,48 @@ const projects: Project[] = [
     id: "voice-auth",
     category: "Security / Healthcare",
     title: "Voice-Based Authentication System",
-    src: `${BASE_PATH}/voice-auth/landing.png`,
-    screenshots: [`${BASE_PATH}/voice-auth/landing.png`],
+    src: `${BASE_PATH}/voice-auth/loginpage.png`,
+    screenshots: [
+      `${BASE_PATH}/voice-auth/loginpage.png`,
+      `${BASE_PATH}/voice-auth/patientmanagement.png`,
+      `${BASE_PATH}/voice-auth/patientdetails.png`,
+    ],
     skills: {
-      frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.tailwind, PROJECT_SKILLS.js],
-      backend: [PROJECT_SKILLS.node, PROJECT_SKILLS.express, PROJECT_SKILLS.mongo],
+      frontend: [
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.tailwind,
+        PROJECT_SKILLS.js,
+      ],
+      backend: [
+        PROJECT_SKILLS.node,
+        PROJECT_SKILLS.express,
+        PROJECT_SKILLS.mongo,
+      ],
     },
-    github: "https://github.com/Harjith2004",
-    live: "https://github.com/Harjith2004",
+    github: "https://github.com/Harjith2004/voice-auth-healthcare",
+    live: "https://voice-auth-healthcare.vercel.app",
     content: (
       <div>
         <TypographyP>
-          A secure voice-based authentication system built for healthcare applications
-          to control user access and protect patient data privacy. This project won
-          1st Place at the Nan Mudhalvan Hackathon.
+          A secure voice-based authentication system built for healthcare
+          applications to control user access and protect patient data privacy.
+          This project won 1st Place at the Nan Mudhalvan Hackathon.
         </TypographyP>
         <ProjectsLinks
-          live="https://github.com/Harjith2004"
-          repo="https://github.com/Harjith2004"
+          live="https://voice-auth-healthcare.vercel.app"
+          repo="https://github.com/Harjith2004/voice-auth-healthcare"
         />
         <TypographyH3>Features</TypographyH3>
         <TypographyP>
-          Voice-based identity verification to enhance system security, protecting
-          sensitive patient records from unauthorized access. Built with a focus
-          on healthcare protocol compliance and data privacy.
+          Voice-based identity verification to enhance system security,
+          protecting sensitive patient records from unauthorized access. Built
+          with a focus on healthcare protocol compliance and data privacy.
         </TypographyP>
         <TypographyH3>Tech Stack</TypographyH3>
         <TypographyP>
-          React.js frontend with Node.js and Express.js backend, MongoDB for data
-          storage, and integrated voice recognition APIs for biometric authentication.
+          React.js frontend with Node.js and Express.js backend, MongoDB for
+          data storage, and integrated voice recognition APIs for biometric
+          authentication.
         </TypographyP>
       </div>
     ),
@@ -182,36 +195,42 @@ const projects: Project[] = [
     id: "urban-complaint",
     category: "AI / NLP System",
     title: "Automated Urban Complaint Classification",
-    src: `${BASE_PATH}/urban-complaint/landing.png`,
-    screenshots: [`${BASE_PATH}/urban-complaint/landing.png`],
+    src: `${BASE_PATH}/urban-complaint/submit.png`,
+    screenshots: [
+      `${BASE_PATH}/urban-complaint/submit.png`,
+      `${BASE_PATH}/urban-complaint/dashboard.png`,
+      `${BASE_PATH}/urban-complaint/log.png`,
+      `${BASE_PATH}/urban-complaint/setting.png`,
+    ],
     skills: {
       frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.tailwind],
       backend: [PROJECT_SKILLS.fastapi, PROJECT_SKILLS.postgres],
     },
-    github: "https://github.com/Harjith2004",
-    live: "https://github.com/Harjith2004",
+    github: "https://github.com/Harjith2004/Smart-Civic-Project",
+    live: "https://smart-civic-project.vercel.app/submit",
     content: (
       <div>
         <TypographyP>
-          A BERT-based NLP system for automated urban complaint classification and
-          priority prediction. Built using React, FastAPI, and PostgreSQL to improve
-          municipal complaint management efficiency.
+          A BERT-based NLP system for automated urban complaint classification
+          and priority prediction. Built using React, FastAPI, and PostgreSQL to
+          improve municipal complaint management efficiency.
         </TypographyP>
         <ProjectsLinks
-          live="https://github.com/Harjith2004"
-          repo="https://github.com/Harjith2004"
+          live="https://smart-civic-project.vercel.app/submit"
+          repo="https://github.com/Harjith2004/Smart-Civic-Project"
         />
         <TypographyH3>Features</TypographyH3>
         <TypographyP>
-          Automated complaint routing with text preprocessing, analytics dashboards,
-          and priority detection. The system uses BERT-based NLP to intelligently
-          categorize and route complaints to the right municipal departments.
+          Automated complaint routing with text preprocessing, analytics
+          dashboards, and priority detection. The system uses BERT-based NLP to
+          intelligently categorize and route complaints to the right municipal
+          departments.
         </TypographyP>
         <TypographyH3>Tech Stack</TypographyH3>
         <TypographyP>
-          React.js for the frontend dashboard, FastAPI (Python) for the NLP backend,
-          PostgreSQL for structured data storage, and BERT for natural language
-          understanding and classification.
+          React.js for the frontend dashboard, FastAPI (Python) for the NLP
+          backend, PostgreSQL for structured data storage, and BERT for natural
+          language understanding and classification.
         </TypographyP>
       </div>
     ),
