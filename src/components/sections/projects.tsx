@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Modal,
   ModalBody,
@@ -10,7 +10,6 @@ import {
 } from "../ui/animated-modal";
 import { FloatingDock } from "../ui/floating-dock";
 import Link from "next/link";
-
 import SmoothScroll from "../smooth-scroll";
 import projects, { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
@@ -23,21 +22,33 @@ const ProjectsSection = () => {
           className={cn(
             "bg-clip-text text-4xl text-center text-transparent md:text-7xl pt-16",
             "bg-gradient-to-b from-black/80 to-black/50",
-            "dark:bg-gradient-to-b dark:from-white/80 dark:to-white/20 dark:bg-opacity-50 mb-32"
+            "dark:bg-gradient-to-b dark:from-white/80 dark:to-white/20 dark:bg-opacity-50 mb-32",
           )}
         >
           Projects
         </h2>
       </Link>
       <div className="grid grid-cols-1 md:grid-cols-3">
-        {projects.map((project, index) => (
+        {projects.map((project) => (
           <Modall key={project.src} project={project} />
         ))}
       </div>
     </section>
   );
 };
+
+// Auto-rotating screenshot card
 const Modall = ({ project }: { project: Project }) => {
+  const [currentImg, setCurrentImg] = useState(0);
+
+  useEffect(() => {
+    if (project.screenshots.length <= 1) return;
+    const interval = setInterval(() => {
+      setCurrentImg((prev) => (prev + 1) % project.screenshots.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, [project.screenshots.length]);
+
   return (
     <div className="flex items-center justify-center">
       <Modal>
@@ -46,13 +57,36 @@ const Modall = ({ project }: { project: Project }) => {
             className="relative w-[400px] h-auto rounded-lg overflow-hidden"
             style={{ aspectRatio: "3/2" }}
           >
-            <Image
-              className="absolute w-full h-full top-0 left-0 hover:scale-[1.05] transition-all"
-              src={project.src}
-              alt={project.title}
-              width={300}
-              height={300}
-            />
+            {/* Auto-rotating screenshots */}
+            {project.screenshots.map((img, idx) => (
+              <Image
+                key={img}
+                className="absolute w-full h-full top-0 left-0 object-cover transition-opacity duration-700"
+                style={{ opacity: idx === currentImg ? 1 : 0 }}
+                src={img}
+                alt={project.title}
+                width={400}
+                height={300}
+              />
+            ))}
+
+            {/* Dot indicators */}
+            {project.screenshots.length > 1 && (
+              <div className="absolute bottom-10 left-0 right-0 flex justify-center gap-1.5 z-10">
+                {project.screenshots.map((_, idx) => (
+                  <div
+                    key={idx}
+                    className="w-1.5 h-1.5 rounded-full transition-all duration-300"
+                    style={{
+                      background:
+                        idx === currentImg ? "#fff" : "rgba(255,255,255,0.4)",
+                    }}
+                  />
+                ))}
+              </div>
+            )}
+
+            {/* Gradient overlay with title */}
             <div className="absolute w-full h-1/2 bottom-0 left-0 bg-gradient-to-t from-black via-black/85 to-transparent pointer-events-none">
               <div className="flex flex-col h-full items-start justify-end p-6">
                 <div className="text-lg text-left">{project.title}</div>
@@ -63,6 +97,8 @@ const Modall = ({ project }: { project: Project }) => {
             </div>
           </div>
         </ModalTrigger>
+
+        {/* Modal with screenshot background */}
         <ModalBody className="md:max-w-4xl md:max-h-[80%] overflow-auto">
           <SmoothScroll isInsideModal={true}>
             <ModalContent>
@@ -84,14 +120,72 @@ const Modall = ({ project }: { project: Project }) => {
     </div>
   );
 };
+
 export default ProjectsSection;
 
 const ProjectContents = ({ project }: { project: Project }) => {
+  const [activeImg, setActiveImg] = useState(0);
+
+  useEffect(() => {
+    if (project.screenshots.length <= 1) return;
+    const interval = setInterval(() => {
+      setActiveImg((prev) => (prev + 1) % project.screenshots.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [project.screenshots.length]);
+
   return (
     <>
-      <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-8">
+      <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-6">
         {project.title}
       </h4>
+
+      {/* Screenshot gallery with background */}
+      {project.screenshots.length > 0 && (
+        <div
+          className="relative w-full rounded-xl overflow-hidden mb-8"
+          style={{ height: 240 }}
+        >
+          {project.screenshots.map((img, idx) => (
+            <Image
+              key={img}
+              src={img}
+              alt={`screenshot-${idx}`}
+              fill
+              className="object-cover transition-opacity duration-700"
+              style={{ opacity: idx === activeImg ? 1 : 0 }}
+            />
+          ))}
+          {/* dark overlay so text is readable on top */}
+          <div className="absolute inset-0 bg-black/40" />
+
+          {/* Thumbnail row */}
+          <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2 z-10">
+            {project.screenshots.map((img, idx) => (
+              <button
+                key={img}
+                onClick={() => setActiveImg(idx)}
+                className="rounded-md overflow-hidden border-2 transition-all"
+                style={{
+                  borderColor: idx === activeImg ? "#fff" : "transparent",
+                  opacity: idx === activeImg ? 1 : 0.6,
+                }}
+              >
+                <Image
+                  src={img}
+                  alt={`thumb-${idx}`}
+                  width={60}
+                  height={40}
+                  className="object-cover"
+                  style={{ height: 40, width: 60 }}
+                />
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Skills */}
       <div className="flex flex-col md:flex-row md:justify-evenly max-w-screen overflow-hidden md:overflow-visible">
         <div className="flex flex-row md:flex-col-reverse justify-center items-center gap-2 text-3xl mb-8">
           <p className="text-sm mt-1 text-neutral-600 dark:text-neutral-500">
@@ -110,35 +204,7 @@ const ProjectContents = ({ project }: { project: Project }) => {
           </div>
         )}
       </div>
-      {/* <div className="flex justify-center items-center">
-        {project.screenshots.map((image, idx) => (
-          <motion.div
-            key={"images" + idx}
-            style={{
-              rotate: Math.random() * 20 - 10,
-            }}
-            whileHover={{
-              scale: 1.1,
-              rotate: 0,
-              zIndex: 100,
-            }}
-            whileTap={{
-              scale: 1.1,
-              rotate: 0,
-              zIndex: 100,
-            }}
-            className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 flex-shrink-0 overflow-hidden"
-          >
-            <Image
-              src={`${project.src.split("1.png")[0]}${image}`}
-              alt="screenshots"
-              width="500"
-              height="500"
-              className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover flex-shrink-0"
-            />
-          </motion.div>
-        ))}
-      </div> */}
+
       {project.content}
     </>
   );
