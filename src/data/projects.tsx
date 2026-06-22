@@ -242,7 +242,7 @@ const projects: Project[] = [
     src: `${BASE_PATH}/jobtrack/dashboard.png`,
     screenshots: [
       `${BASE_PATH}/jobtrack/dashboard.png`,
-      `${BASE_PATH}/jobtrack/applications.png`,
+      `${BASE_PATH}/jobtrack/application.png`,
       `${BASE_PATH}/jobtrack/analytics.png`,
     ],
     skills: {
