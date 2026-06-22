@@ -235,6 +235,52 @@ const projects: Project[] = [
       </div>
     ),
   },
+  {
+    id: "jobtrack",
+    category: "React / Frontend",
+    title: "JobTrack — Job Application Tracker",
+    src: `${BASE_PATH}/jobtrack/dashboard.png`,
+    screenshots: [
+      `${BASE_PATH}/jobtrack/dashboard.png`,
+      `${BASE_PATH}/jobtrack/applications.png`,
+      `${BASE_PATH}/jobtrack/analytics.png`,
+    ],
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.js,
+        PROJECT_SKILLS.tailwind,
+      ],
+      backend: [],
+    },
+    github: "https://job-tracker-uwtg.vercel.app",
+    live: "https://your-vercel-link.vercel.app",
+    content: (
+      <div>
+        <TypographyP>
+          A modern job application tracker built with React. Track every
+          application, interview, and offer with an animated response-rate
+          dashboard, search and filter, and visual analytics — all saved locally
+          in your browser.
+        </TypographyP>
+        <ProjectsLinks
+          live="https://job-tracker-uwtg.vercel.app"
+          repo="https://github.com/Harjith2004/Job-Tracker"
+        />
+        <TypographyH3>Features</TypographyH3>
+        <TypographyP>
+          Animated response-rate ring, add/edit/delete applications, search and
+          filter by status, pie and bar charts for analytics, and automatic
+          localStorage persistence — no backend or account needed.
+        </TypographyP>
+        <TypographyH3>Tech Stack</TypographyH3>
+        <TypographyP>
+          React 18 for UI, Recharts for data visualization, and localStorage for
+          client-side data persistence. Clean single-file architecture.
+        </TypographyP>
+      </div>
+    ),
+  },
 ];
 
 export default projects;
